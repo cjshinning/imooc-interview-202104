@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>DOM事件</title>
+</head>
+
+<body>
+  <div id="ev">
+    <style>
+      #ev {
+        width: 300px;
+        height: 100px;
+        background: gray;
+        color: #fff;
+        text-align: center;
+        line-height: 100px;
+      }
+    </style>
+    目标元素
+  </div>
+  <script>
+    // 一、DOM事件级别：
+    // 1、DOM0 element.onclick=function(){}
+    // 2、DOM2 element.addEventListener('click',function(){})
+    // 3、DOM3 element.addEventListener('keyup', function(){})
+
+    // 二、事件模型
+    // 捕获和冒泡
+
+    // 三、事件流：
+    // 捕获->目标阶段->冒泡阶段
+    // DOM事件捕获具体流程：
+    // window->document->html->body->...->目标元素
+    // DOM事件冒泡具体流程：(捕获反过来)
+
+    // 四、Event对象的常见应用：
+    // event.preventDefault()
+    // event.stopPropagation()
+    // event.stopImmediatePropagation()
+    // event.currentTarget
+    // event.target
+
+    // 五、自定义事件
+    // var eve = new Event('custome');
+    // ev.addEventListener('custome', function () {
+    //   console.log('custome');
+    // })
+    // ev.dispatchEvent(eve)
+
+    var ev = document.getElementById('ev');
+
+    window.addEventListener('click', function () {
+      console.log('window capture');
+    }, true);
+
+    document.addEventListener('click', function () {
+      console.log('document capture');
+    }, true);
+
+    document.documentElement.addEventListener('click', function () {
+      console.log('html capture');
+    }, true);
+
+    document.body.addEventListener('click', function () {
+      console.log('body capture');
+    }, true);
+
+    ev.addEventListener('click', function () {
+      console.log('ev capture');
+    }, true);
+
+    var eve = new Event('test');
+    ev.addEventListener('test', function () {
+      console.log('test dispatch');
+    })
+    setTimeout(function () {
+      ev.dispatchEvent(eve);
+    }, 1000)
+  </script>
+</body>
+
+</html>
