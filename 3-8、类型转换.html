@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>类型转换</title>
+</head>
+
+<body>
+  <script>
+    // 一、数据类型（7种）
+    // 原始类型：Null,Undefined,Number,String,Boolean,Symbol
+    // 对象：Object
+
+    // 二、显示类型转换
+    // Number函数、String函数、Boolean函数
+    // Number函数
+    // 原始类型转换：
+    // 数值：转换后还是原来的值
+    // 字符串：如果可以被解析为数值，则转换为相应的数值，否则NaN，空字符串转为0
+    // 布尔值：true转成1，false转成0
+    // undefined：转成NaN
+    // null：转成0
+
+    // 对象类型：
+    // 先调用valueOf方法，如果返回原始类型的值，则直接使用Number方法
+    // 如果valueOf方法返回复合类型的值，再调用toString方法，如果toString方法返回原始类型的值，则对该值使用Number方法，不再进行后续步骤
+    // 如果toString方法返回的是复合类型，则报错
+
+    // var a = {
+    //   a: 1
+    // }
+    // console.log(Number(a));
+
+    // String函数
+    // 先调用toString方法，如果是toString方法返回的是原始类型的值，则对该值使用String方法，不再进行以下步骤。
+    // 如果tpString方法返回的是复合类型的值，再调用valueOf方法，如果valueOf方法返回的是原始类型的值，则对该值使用String方法，不再进行以下步骤。
+    // 如果valueOf方法返回的是符合类型的值，则报错
+
+    // var b = {
+    //   b: 1,
+    //   toString: function () {
+    //     return {
+    //       b: 2
+    //     }
+    //   },
+    //   valueOf: function () {
+    //     return 'b'
+    //   }
+    // }
+    // console.log(String(b))
+
+    // Boolean函数
+    // 原始类型转换：undefined,null,-0,+0,NaN,''，这些都转换为false
+
+    // 三、隐式类型
+    // console.log([] + []); //空字符串
+    // console.log([] + {}); //[object Object]
+    // console.log({} + []); //[object Object]
+    // console.log({} + {}); //[object Object][object Object]
+    // console.log(true + true); //2
+    // console.log(1 + {
+    //   a: 1
+    // }); //1[object Object]
+
+    // 四、类型转换typeof
+    console.log(typeof undefined); //undefined
+    console.log(typeof null); //object
+    console.log(typeof true); //boolean
+    console.log(typeof 100); //number
+    console.log(typeof 'jenny'); //string
+    console.log(typeof {
+      a: 1
+    }); //object
+  </script>
+</body>
+
+</html>
