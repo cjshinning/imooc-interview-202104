@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>安全类</title>
+</head>
+
+<body>
+  <script>
+    // 前端安全分类：
+    // 一、CSRF
+    // 1、基本概念和缩写：
+    // 跨站请求伪造，英文名Cross-site request forgery缩写CSRF
+    // 用户是网页A的注册用户，登录网站A后下发cookie；
+    // 然后用户去访问网站B，B中存在引诱点击，如果这个引诱点击是网站A的某个接口（尤其是get形式），发起这个请求，网站A看到已经登录，就返回数据，并且浏览器开始下载cookie，这样网站B就利用拿到cookie进行攻击
+    // 1、网站中某个接口存在漏洞
+    // 2、用户在网站A确实登录过
+    // 2、防御措施
+    // Token验证
+    // Referer验证
+    // 隐藏令牌
+
+    // 二、xss
+    // 1、基本概念和缩写：
+    // XSS跨站脚本攻击（cross-site scripting）
+    // 向页面注入脚本
+    // 不需要任何登录
+    // 防御措施：
+    // https://www.imooc.com/learn/812
+  </script>
+</body>
+
+</html>
