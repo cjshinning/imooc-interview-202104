@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 一、什么是DOCTYPE及作用
+    // 1、DTD（document type definition，文档类型定义）
+    // 是一系列的预防规则，用来定义HTML的文件类型。浏览器会使用它来判断文档类型，决定使用何种协议来解析，以及切换浏览器模式
+    // 通俗的说,就是告诉浏览器我是什么文档类型,浏览器根据这个决定用什么引擎解析它.
+
+    // 2、DOCTYPE是用来声明文档类型和DTD规范的,用于检测文件的合法性
+
+    // 二、浏览器渲染过程
+    // 1、HTML经过html Parser解析生成DOM tree
+    // 2、CSS经过CSS parser解析生成CSSOM tree
+    // 3、通过Attachment将DOM树和CSS规则树整合，形成一个render tree，浏览器的layout对render tree计算其在浏览器显示的具体位置，最终画出来，在浏览器上呈现给用户
+
+    // 三、重排Reflow
+    // 1、定义：DOM结构中的各个元素都有自己的盒子（模型），这些都需要浏览器根据各种样式来计算并根据计算结果将元素放到它该出现的位置，这个过程称之为reflow。
+    // 2、触发条件
+    // （1）增加、删除、修改DOM节点事，会导致Reflow和Repaint
+    // （2）移动DOM的位置，或者动画时
+    // （3）修改CSS样式
+    // （4）Resize窗口
+    // （5）修改网页默认字体
+
+    // 四、重绘Repaint
+    // 1、定义：页面要呈现的内容画在屏幕上
+    // 2、触发条件：
+    // （1）DOM改动
+    // （2）CSS改动
+
+    // 五、布局Layout
+  </script>
+</body>
+
+</html>
