@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>通信类</title>
+</head>
+
+<body>
+  <script>
+    // 一、什么是同源策略？
+
+    // 二、前后端通信有哪些方式？
+    // Ajax,websocket,CORS
+
+    // 三、跨域通信的几种方式？
+    // JSONP,Hash,postMessage,WebSocket,CORS
+
+    // 四、JSONP实现原理？
+    // 利用script标签的异步加载实现
+
+    // 窗口A：
+    Bwindow.postMessage('data', 'http://B.com');
+    // 窗口B监听：
+    window.addEventListener('message', function (event) {
+      console.log(event.origin); //http://A.com
+      console.log(event.source); //Awindow
+      console.log(event.data); //data
+    }, false);
+
+    var ws = new WebSocket('wss://echo.websocket.org');
+
+    ws.onopen = function (evt) {
+      console.log('Connecting open ...');
+      ws.send('Hello Websockets');
+    }
+
+    ws.onmessage = function (evt) {
+      console.log('Received Message: ' + evt.data);
+    }
+
+    ws.onclose = function (evt) {
+      console.log('Connection closed.');
+    }
+
+    // CORS标准
+    fetch('/some/url', {
+      method: 'get'
+    }).then(function (response) {
+
+    }).catch(function (err) {
+
+    })
+  </script>
+</body>
+
+</html>
