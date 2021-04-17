@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>页面性能</title>
+  <!-- <script src="./js/defer1.js" defer></script>
+  <script src="./js/defer2.js" defer></script> -->
+  <script src="./js/async1.js" async></script>
+  <script src="./js/async2.js" async></script>
+</head>
+
+<body>
+  <div>
+    test
+    <script>
+      console.log('write');
+      document.write('<span>wirter</span>')
+    </script>
+    <script>
+      for (var i = 0; i < 200000; i++) {
+        if (i % 20000 === 0) {
+          console.log(i);
+        }
+      }
+    </script>
+  </div>
+  <script>
+    // 页面性能类
+    // 一、提升页面性能的方法有哪些？
+    // 1、资源压缩合并，减少http请求
+    // 2、非核心代码异步加载
+    // 3、利用浏览器缓存
+    // 4、使用cdn
+    // 5、预解析DNS
+
+    // 二、异步加载的方式
+    // 1、动态脚本加咋
+    // 2、defer
+    // 3、async
+
+    // 三、异步加载区别
+    // 1、defer是在HTML解析完之前才会执行，如果是多个，按照加载的顺序依次执行
+    // 2、async是在加载完支行荔枝执行，如果是多个，执行顺序和加载顺序无关
+
+    // 四、浏览器缓存
+    // 分类：
+    // 1、强缓存
+    // 问都不问就直接拿过来用，在过期时间之前不会再和服务器通信，直接拿本地副本使用
+    // Expires（过期时间）服务器的绝对时间 Expires: Thu,21 Jane 2017 23:39:02 GMT
+    // 缺点：客户端时间可能会不准
+    // Cache-Control（相对时间） Cache-Control: max-age=3600
+    // 两个都下发的话，以后者为准
+    // 2、协商缓存
+    // 浏览器发现本地有副本，但是不确定用不用它，需要向服务器问一下文件是不是能用，是否过期了
+    // Last-Modified If-Modified-Since
+    // 服务器下发：
+    // Last-Modified: Sat, 17 Apr 2021 13:38:17 GMT
+    // ETag: W/"7e3-178e00db323"
+
+    // Etag If-None-Match
+    // 客户端请求：
+    // If-Modified-Since: Sat, 17 Apr 2021 13:36:44 GMT
+    // 缺点：修改时间变了，但是内容没有变化，其实是可以用副本的
+    // If-None-Match: W/"7a0-178e00c46c7"
+    // 解决上述缺点
+  </script>
+</body>
+
+</html>
