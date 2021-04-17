@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>错误监控</title>
+  <script>
+    window.addEventListener('error', function (e) {
+      console.log('捕获', e);
+    }, true)
+  </script>
+</head>
+
+<body>
+  <script src="//mythzzz.com/test.js"></script>
+  <script>
+    // 一、前端错误类型分类
+    // 即时运行错误
+    // 1)try...catch  2) window.onerror
+    // 资源加载错误  
+    // 1)object.onerror  2)performance.getEntries  3)Error事件捕获
+
+    // 二、上报错误的基本原理
+    // 1、采用Ajax通信的方式
+    // 2、利用image对象上报
+
+    (new Image()).src = 'http://mythzzz.com/testjsk?r=sdhsh'
+  </script>
+</body>
+
+</html>
