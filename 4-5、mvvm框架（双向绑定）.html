@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>mvvm框架</title>
+</head>
+
+<body>
+  <script>
+    // 1、了解mvvm框架吗？
+    // 回答：比如用过vue，自学过react,实际项目中用vue
+
+    // 2、谈谈你对mvvm的认识？
+    // （1）先聊mvc，mvvm是在mvc，mvp的基础上衍生出来的
+    // （2）聊聊mvvm的定义，m代表Modal，v代表view，vm代表viewmodal，是一个核心枢纽
+
+    // 3、双向绑定的原理，可以写出来吗？
+    // 正向：view（页面）<-------- data（数据）
+    // 数据变了，如果显示在页面上
+    // 反向：view（页面）--------> data（数据）
+    // 绑定：自动化处理从view->data，和data->view的双向改变
+    // 传统data->view，是先获取dom元素，然后把数据给他的innerHtml赋值
+    // 传统view->data，是通过input事件监听，然后获取它的e.target.value，存储到data
+    // 双向绑定data->view正向，比如从服务端拿到数据赋值给data，data发生了变化，它怎么知道数据变了。比如a=1是初始值，当a=2的时候，data变化是自动帮忙刷新页面，主要是通过Object.defineProperty来实现
+    // 页面变了，如何映射到data中
+    // Object.defineProperty可以监听到data的变化，然后监听到变化后有回调函数，大家写好回调函数，就不需要关心后续的了
+    // 双向绑定view->data反向
+
+    // 4、使用了什么设计模式？
+    // 5、生命周期是什么？
+    // 6、有看过源码吗？
+  </script>
+</body>
+
+</html>
